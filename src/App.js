@@ -6,16 +6,26 @@ import { Rendar } from './learnreact/rendaring';
 import {Example} from './learnreact/secondhooks';
 import {Usehook} from './learnreact/useeffect';
 import {Gallery} from './learnreact/hooksfromdoc';
+import { Route, Routes } from 'react-router-dom';
+import { Homepage } from './routes/homepage';
+import { Aboutpage } from './routes/aboutpage';
 // import { Statebutton } from './learnreact/statehooks';
-
+import {Nvbarpage} from '../src/routes/navbar' ;
 
 function App() {
   return (
     <>
+    <Nvbarpage/>
    {/* <Statebutton/> */}
     {/* <Example/> */}
     {/* <Usehook/> */}
-    <Gallery/>
+    {/* <Gallery/> */}
+    <Routes>
+<Route path='/' element={<Homepage/>}></Route>
+
+<Route path='about' element={<Aboutpage/>}></Route>
+
+    </Routes>
     </>
   );
 }
